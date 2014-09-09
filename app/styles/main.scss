@@ -1,0 +1,334 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+// bower:scss
+@import "compass";
+@import "bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
+@import url(http://fonts.googleapis.com/css?family=Press+Start+2P);
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* Space out content a bit */
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  height: 2048px;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+$blue: #0080ff;
+$lightblue: #80c0ff;
+$darkblue: #004080;
+      
+$navbar-default-link-active-bg: $blue;
+
+a {
+  & {
+    color: $blue;
+  }
+  &:hover {
+    color: $lightblue;
+  }
+}
+
+/* Custom page header */
+.header {
+  //border-bottom: 1px solid #e5e5e5;
+  //margin-bottom: 20px;
+
+  li a {
+    color: $blue;
+  }
+  li.active a{
+    background: $blue;
+    &:hover {
+      background: $lightblue;
+    }
+  }
+
+  /* Make the masthead heading the same height as the navigation */
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+  }
+
+  
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+
+  .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+  }
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+
+  p + h4 {
+    margin-top: 28px;
+  }
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+
+.clear {
+    clear: left;
+}
+
+@mixin transition($duration) {
+  -webkit-transition: $duration cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+  -moz-transition: $duration cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+  -ms-transition: $duration cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+  -o-transition: $duration cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+  transition: $duration cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+}
+
+.relative {
+  position: relative;
+  //background-color: red;
+  //border: 1px green solid;
+}
+
+.slide {
+  background-color: yellow;
+  position: absolute;
+  //float:left;
+  //left: 0;
+  //top: 0;
+  //width: 100%;
+  height: 100%;
+  opacity: 1.0;
+}
+
+.slide.ng-enter,
+.slide.ng-leave {
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.slide.ng-enter {
+    opacity: 0.0;
+    //position: absolute;
+    //top: -100%;
+    //left: 0px;
+}
+.slide.ng-enter-active {
+    opacity: 1.0;
+    //position: relative;
+    //top: 0%;
+    //left: 100%;
+}
+.slide.ng-leave {
+    opacity: 1.0;
+    //position: absolute;
+    //top: 0%;
+    //left: 100%;
+}
+.slide.ng-leave-active {
+    opacity: 0.0;
+    //position: relative;
+    //top: 100%;
+    //left: 0px;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+} 
+
+@mixin text-border($thickness, $color) {
+  text-shadow:
+   (-$thickness) (-$thickness) 0 $color,
+    $thickness (-$thickness) 0 $color,
+    (-$thickness) $thickness 0 $color,
+    $thickness $thickness 0 $color,
+   (-$thickness) 0px 0 $color,
+    0px (-$thickness) 0 $color,
+    0px $thickness 0 $color,
+    $thickness 0px 0 $color;
+}
+
+.custom-container {
+
+  font-family: 'Press Start 2P', cursive;
+  text-transform: uppercase;
+
+  .controller {
+
+      $border-radius: 5px;
+
+      $bar-height: 35px;
+      
+      $title-color: white;
+      $title-bg-color: black;
+  	
+      $level-color: white;
+      $level-bg-color: black;
+      
+      $total-color: white;
+      $total-bg-color: black;
+      
+      $bar-txt-color: black;
+      $bar-bg-color: white;
+      
+      margin-top: 0px;
+      margin-bottom: 30px;
+
+      .content {
+          padding: 8px;
+          background-color: gray;
+  		    //@include border-radius($border-radius);
+      
+          .icon {
+            position: absolute;
+            top: 13px;
+            left: 28px;
+          }
+
+          h2 {
+            text-align: center;
+            margin: 0px;
+            padding: 0px;
+            padding-top: 15px;
+            padding-bottom: 5px;
+            color: $title-color;
+            background: $title-bg-color;
+
+            
+          }
+      
+          .info {
+      			margin: 0px;
+            padding: 0px;
+      		}
+
+          .level-up-enter {
+            @include text-border(4px, $blue);
+          }
+
+          .level-up-leave {
+            
+          }
+          
+          .level {
+            color: $level-color;
+        		@extend .info;
+            text-align: center;
+            font-size: 24px;
+            @include transition(100ms);
+            background-color: $level-bg-color;
+          }
+
+          .total {
+            @extend .info;
+            color: $total-color;
+            background: $total-bg-color;
+            text-align: center;
+            padding-top: 5px;
+            padding-bottom: 10px;
+          }
+
+          .bar {
+
+            $bar-border-radius: 2px;
+
+            width: 100%;
+            height: $bar-height;
+            background-color: $bar-bg-color;
+            float: left;
+
+           .bar-background {
+              //border: solid 1px #dddddd;
+              width: 100%;
+              height: $bar-height;
+              background-color: $bar-bg-color;
+            }
+
+            .bar-fill {
+              background-color: $blue;
+              height: 100%;
+              //border-left: 2px solid $lightblue;
+              border-top: 2px solid $lightblue;
+              //border-right: 2px solid $darkblue;
+              border-bottom: 2px solid $darkblue;
+
+              @include transition(100ms);
+            }
+
+            .bar-text {
+                color: $bar-txt-color;
+                position: relative;
+                top: -25px;
+                text-align: center;
+                padding-right: 5px;
+
+                @include text-border(1px, #fff);
+            }
+          }
+
+          
+      }
+  }
+
+  .about{
+    margin-bottom:30px; 
+  }
+
+  .debug {
+    background: yellow;
+  }
+}
