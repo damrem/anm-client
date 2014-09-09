@@ -10,7 +10,7 @@ var app=express();
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.use(methodOverride());
-//app.use(express.static(path.join(application_root, "client/dist/")));
+app.use(express.static(path.join(application_root, "dist/")));
 app.use(errorHandler({dumpExceptions:true, showStack:true}));
 
 app.set('port', (process.env.PORT || 5000));
