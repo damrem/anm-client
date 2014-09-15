@@ -15,7 +15,8 @@ app.use(bodyParser.json());
 app.use(methodOverride());
 console.log('path.join: '+path.join(applicationRoot, 'dist/'));
 //console.log('express.static'+express.static(path.join(applicationRoot, 'dist/')));
-app.use(express.static(path.join(applicationRoot, 'dist/')));
+//app.use(express.static(path.join(applicationRoot, 'dist/')));
+app.use(express.static('dist/'));
 app.use(errorHandler({dumpExceptions:true, showStack:true}));
 
 app.set('port', (process.env.PORT || 5000));
