@@ -34,9 +34,12 @@ app
 ;
 
 function UserListCtrl($scope, $http, $templateCache){
+
 	var method='POST';
-	//var port=5000;
+
+	//TODO the url must be retrieved from env
 	var inserturl='http://anm-server.herokuapp.com/insertuser';
+	
 	$scope.codeStatus='';
 	
 	$scope.save=function(){
@@ -76,7 +79,10 @@ function UserListCtrl($scope, $http, $templateCache){
 	};
 
 	$scope.list = function(){
+		
 		console.log('list');
+
+		//TODO the url must be retrieved from env
 		var url='http://anm-server.herokuapp.com/getallusers';
 		console.log('url='+url);
 
