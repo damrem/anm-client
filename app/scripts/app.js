@@ -78,6 +78,7 @@ function UserListCtrl($scope, $http, $templateCache){
 	$scope.list = function(){
 		console.log('list');
 		var url='http://anm-server.herokuapp.com/getallusers';
+		console.log('url='+url);
 
 		$http.get(url)
 		.success(function(data){
