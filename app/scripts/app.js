@@ -35,8 +35,8 @@ app
 
 function UserListCtrl($scope, $http, $templateCache){
 	var method='POST';
-	var port=5000;
-	var inserturl='http://anm-server.herokuapp.com:'+port+'/insertuser';
+	//var port=5000;
+	var inserturl='http://anm-server.herokuapp.com/insertuser';
 	$scope.codeStatus='';
 	
 	$scope.save=function(){
@@ -56,7 +56,9 @@ function UserListCtrl($scope, $http, $templateCache){
 			method: method,
 			url: inserturl,
 			data: jdata,
-			headers: {'Content-Type':'application/x-www-form-urlencoded'},
+			headers: {
+				'Content-Type':'application/x-www-form-urlencoded'
+			},
 			cache: $templateCache
 		}).
 		success(function(response){
@@ -75,10 +77,14 @@ function UserListCtrl($scope, $http, $templateCache){
 
 	$scope.list = function(){
 		console.log('list');
-		var url='http://anm-server.herokuapp.com:'+port+'/getallusers';
+		var url='http://anm-server.herokuapp.com/getallusers';
 
-		$http.get(url).success(function(data){
+		$http.get(url)
+		.success(function(data){
 			$scope.users=data;
+		})
+		.error(function(response){
+			console.log(response);
 		});
 	};
 

@@ -1,0 +1,6 @@
+{
+  "name": "anm-client",
+  "root": "dist",
+  "clean_urls": false,
+  "error_page": "error.html"
+}
