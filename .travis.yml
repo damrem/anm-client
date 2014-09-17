@@ -2,8 +2,8 @@ language: node_js
 node_js:
 - '0.10'
 before_deploy:
-  "bower install"
-  "grunt build"
+  - "bower install"
+  - "grunt build"
 deploy:
   provider: divshot
   environment:
