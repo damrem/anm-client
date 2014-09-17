@@ -7,7 +7,7 @@ install:
   - "gem install compass"
   - "bower install"
 
-script:
+before_deploy:
   - "grunt build"
 
 deploy:
