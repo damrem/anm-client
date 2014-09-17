@@ -38,6 +38,7 @@ function UserListCtrl($scope, $http, $templateCache){
 	var method='POST';
 
 	//TODO the url must be retrieved from env
+	console.log("env.SERVER_URL"+window.__env.SERVER_URL);
 	var inserturl='http://anm-server.herokuapp.com/insertuser';
 	
 	$scope.codeStatus='';
@@ -81,7 +82,7 @@ function UserListCtrl($scope, $http, $templateCache){
 	$scope.list = function(){
 		
 		console.log('list');
-
+		console.log("env.SERVER_URL"+window.__env.SERVER_URL);
 		//TODO the url must be retrieved from env
 		var url='http://anm-server.herokuapp.com/getallusers';
 		console.log('url='+url);
