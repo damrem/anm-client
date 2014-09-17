@@ -10,8 +10,8 @@
 		
 		<div class="span10">
 			<ul class="users">
-				<li ng-repeat="user in users | filter:user">
-					{{user.name}}
+				<li ng-repeat="user in users | filter:user" ng-bind="user.name">
+					
 				</li>
 			</ul>
 		</div>
