@@ -1,6 +1,7 @@
 language: node_js
 node_js:
 - '0.10'
+before_deploy: "grunt build"
 deploy:
   provider: divshot
   environment:
@@ -8,4 +9,3 @@ deploy:
   api_key:
     secure: H/AiT/iDX8BEmxpNR0h37Wkad7KQkf0eezFarwkdgBCnKORcUR2fyd6PrX4bP4DdVkKqm941VyZ2qyKVd73MYxwpdaUf0ZzLR+3O9tIdm9yxyeeHZEWiOpZrgEH4cu+ebnW2/6+gulUUQkn743+cqIuKnqcGAYTLXBfj9EsPxJY=
   skin_cleanup: true
-  app_dir: dist
