@@ -12,6 +12,8 @@ module.exports = function (grunt) {
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
 
+  //require('grunt-ng-annotate')(grunt);
+
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
@@ -312,18 +314,8 @@ module.exports = function (grunt) {
       }
     },
 
-    // ngmin tries to make the code safe for minification automatically by
-    // using the Angular long form for dependency injection. It doesn't work on
-    // things like resolve or inject so those have to be done manually.
-    ngmin: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '.tmp/concat/scripts',
-          src: '*.js',
-          dest: '.tmp/concat/scripts'
-        }]
-      }
+    ngAnnotate:{
+
     },
 
     // Replace Google CDN references
@@ -429,31 +421,14 @@ module.exports = function (grunt) {
     'concurrent:dist',
     'autoprefixer',
     'concat',
-    'ngmin',
+    'ngAnnotate',
     'copy:dist',
-    //'cdnify',
+    'cdnify',
     'cssmin',
     'uglify',
     'filerev',
-    'usemin'/*,
-    'htmlmin'*/
-  ]);
-
-  grunt.registerTask('build_min', [
-    'clean:dist',
-    'wiredep',
-    'useminPrepare',
-    'concurrent:dist',
-    'autoprefixer',
-    'concat',
-    //'ngmin',
-    'copy:dist',
-    //'cdnify',
-    'cssmin',
-    'uglify',
-    'filerev',
-    'usemin'/*,
-    'htmlmin'*/
+    'usemin',
+    'htmlmin'
   ]);
 
   grunt.registerTask('default', [
