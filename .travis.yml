@@ -7,7 +7,7 @@ install:
   - "gem install compass"
   - "bower install"
 
-before_deploy:
+script:
   - "grunt build"
 
 deploy:
@@ -16,4 +16,4 @@ deploy:
     master: development
   api_key:
     secure: H/AiT/iDX8BEmxpNR0h37Wkad7KQkf0eezFarwkdgBCnKORcUR2fyd6PrX4bP4DdVkKqm941VyZ2qyKVd73MYxwpdaUf0ZzLR+3O9tIdm9yxyeeHZEWiOpZrgEH4cu+ebnW2/6+gulUUQkn743+cqIuKnqcGAYTLXBfj9EsPxJY=
-  skin_cleanup: true
+  skip_cleanup: true
