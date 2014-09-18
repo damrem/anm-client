@@ -9,13 +9,14 @@
 
 module.exports = function (grunt) {
 
+  grunt.loadNpmTasks('grunt-ng-annotate');
+  
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
 
-  //require('grunt-ng-annotate')(grunt);
-
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
+
 
   // Configurable paths for the application
   var appConfig = {
@@ -315,7 +316,15 @@ module.exports = function (grunt) {
     },
 
     ngAnnotate:{
-
+      dist:{
+        files:[{
+          expand: true,
+          cwd: '.tmp/concat/scripts',
+          src: ['*.js'],
+          ext: '.js',
+          dest: '.tmp/concat/scripts'
+        }]
+      }
     },
 
     // Replace Google CDN references
@@ -386,6 +395,8 @@ module.exports = function (grunt) {
   });
 
 
+
+
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
@@ -421,14 +432,14 @@ module.exports = function (grunt) {
     'concurrent:dist',
     'autoprefixer',
     'concat',
-    'ngAnnotate',
+    'ngAnnotate:dist',
     'copy:dist',
-    'cdnify',
+    //'cdnify',
     'cssmin',
     'uglify',
     'filerev',
-    'usemin',
-    'htmlmin'
+    'usemin'/*,
+    'htmlmin'*/
   ]);
 
   grunt.registerTask('default', [
