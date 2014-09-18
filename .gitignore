@@ -2,8 +2,7 @@
 /node_modules
 /bower_components
 /.tmp
-/.sass-cache
-/.divshot-cache
+/.*-cache
 /.env.json
 /*.sublime-*
 /__
