@@ -19,7 +19,7 @@
     "express": "^4.8.7",
     "grunt": "^0.4.5",
     "grunt-autoprefixer": "^1.0.1",
-    "grunt-build": "^0.1.1",
+    "grunt-build": "damrem/grunt-build",
     "grunt-cdnify": "^0.1.0",
     "grunt-cli": "^0.1.13",
     "grunt-concat": "^0.1.6",

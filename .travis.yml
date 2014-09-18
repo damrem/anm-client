@@ -11,6 +11,7 @@ script:
   - "grunt build"
 
 deploy:
+  branch: master
   provider: divshot
   environment:
     master: development
