@@ -4,6 +4,7 @@
   "description": "A angular, node and mongo experiment.",
   "main": "Gruntfile.js",
   "scripts": {
+    "test": "grunt test",
     "postinstall": "grunt build"
   },
   "author": "damrem",
