@@ -6,6 +6,7 @@ install:
   - "npm install"
   - "gem install compass"
   - "bower install"
+  - "npm test"
 
 script:
   - "grunt build"
