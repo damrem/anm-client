@@ -33,13 +33,13 @@ app
 */
 ;
 
-function UserListCtrl($scope, $http, $templateCache){
+function UserListCtrl($scope, $http, $templateCache, env){
 
 	var method='POST';
 
 	//TODO the url must be retrieved from env
-	console.log('env.SERVER_URL'+window.__env.SERVER_URL);
-	var inserturl=window.__env.SERVER_URL+'/insertuser';
+	console.log('env.SERVER_URL= '+env.SERVER_URL);
+	var inserturl = env.SERVER_URL+'/insertuser';
 	
 	$scope.codeStatus='';
 	
@@ -82,10 +82,10 @@ function UserListCtrl($scope, $http, $templateCache){
 	$scope.list = function(){
 		
 		console.log('list');
-		console.log('env.DEFAULT_VAR = ' + window.__env.DEFAULT_VAR);
-		console.log('env.SERVER_URL'+window.__env.SERVER_URL);
+		
+		console.log('env.SERVER_URL= '+env.SERVER_URL);
 		//TODO the url must be retrieved from env
-		var url=window.__env.SERVER_URL+'/getallusers';
+		var url = env.SERVER_URL+'/getallusers';
 		console.log('url='+url);
 
 		$http.get(url)
@@ -100,4 +100,4 @@ function UserListCtrl($scope, $http, $templateCache){
 	$scope.list();
 }
 
-app.controller('UserListCtrl', ['$scope', '$http', '$templateCache', UserListCtrl]);
+app.controller('UserListCtrl', ['$scope', '$http', '$templateCache', 'env', UserListCtrl]);
