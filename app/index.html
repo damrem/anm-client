@@ -6,15 +6,13 @@
     </head>
 	<body ng-controller="UserListCtrl">
     <!--<body>-->
-		Search: <input ng-model="user"/>
+		<!--Search: <input ng-model="user"/>-->
 		
 		<div class="span10">
-			<ul class="users">
-				<li ng-repeat="user in users | filter:user" ng-bind="user.name">
-					
-				</li>
-			</ul>
+			<div ng-repeat="user in users" anm-user="user"></div>	
 		</div>
+
+        
 
 		<form name="myform" id="myform1" ng-submit="save()">
 			<fieldset>
@@ -61,6 +59,7 @@
     	<!-- build:js({.tmp,app}) scripts/scripts.js -->
 		<script src="scripts/app.js"></script>
         <script src="scripts/env/env-service.js"></script>
+        <script src="scripts/user/user-directive.js"></script>
 		<!-- endbuild -->
 
 	</body>
