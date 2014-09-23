@@ -38,49 +38,7 @@ app
 
 function UserListCtrl($scope, $http, $templateCache, env){
 
-	var method='POST';
-
-	//TODO the url must be retrieved from env
-	console.log('env.SERVER_URL= '+env.SERVER_URL);
-	var inserturl = env.SERVER_URL+'/insertuser';
-	
 	$scope.codeStatus='';
-	
-	$scope.save=function(){
-		console.log('save');
-		var formData={
-			'username':this.username,
-			'password':this.password,
-			'email':this.email
-		};
-		this.username='';
-		this.password='';
-		this.email='';
-
-		var jdata='mydata='+JSON.stringify(formData);
-
-		$http({
-			method: method,
-			url: inserturl,
-			data: jdata,
-			headers: {
-				'Content-Type':'application/x-www-form-urlencoded'
-			},
-			cache: $templateCache
-		}).
-		success(function(response){
-			console.log('Success.');
-			$scope.codeStatus=response;
-			console.log($scope.codeStatus);
-		}).
-		error(function(response){
-			console.log('Error.');
-			$scope.codeStatus=response;
-			console.log($scope.codeStatus);
-		});
-		$scope.list();
-		return false;
-	};
 
 	$scope.list = function(){
 		
