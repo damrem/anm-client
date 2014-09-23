@@ -2,7 +2,9 @@
 
 angular.module('app')
 
-.controller('userListController', ['$scope', '$http', '$templateCache', 'env', function($scope, $http, $templateCache, env) {
+.controller('userListController', 
+	['$scope', 'userList', 
+	function($scope, userList) {
 
 	console.log('userListController added to app');
 	
@@ -10,12 +12,12 @@ angular.module('app')
 		
 		console.log('userListController.list()');
 		
-		$http.get(env.SERVER_URL+'/getallusers')
-		.success(function(data){
-			$scope.users=data;
-		})
-		.error(function(response){
-			console.log(response);
+		userList.get(
+		function(data){
+			$scope.users = data;
+		},
+		function(error){
+			console.log(error);
 		});
 	};
 
