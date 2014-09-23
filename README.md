@@ -1,8 +1,8 @@
 ![travis build](https://travis-ci.org/damrem/anm-client.svg)
 
-This is the client side of an experiment using [AngularJS](https://angularjs.org/), [Node.js](http://nodejs.org/) & [MongoDB](http://www.mongodb.org/). It has no functional interest.
+This is the client side of a personal experiment using [AngularJS](https://angularjs.org/), [Node.js](http://nodejs.org/) & [MongoDB](http://www.mongodb.org/). It has no functional interest.
 
-It is a single page-webapp that I developed with [AngularJS](https://angularjs.org/) to discover the ecosystem, the tools & the best-practices around this tech:
+It is a single page-webapp developed with [AngularJS](https://angularjs.org/) to discover the ecosystem, the tools & the best-practices around this tech:
 * encapsulate features into components, themselves being cut into views, controllers, directives, filters
 * unit test and automate as much as possible
 
