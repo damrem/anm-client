@@ -4,9 +4,9 @@ angular.module('app').service('addUser',
 	['$http', '$templateCache', 'env', 
 	function($http, $templateCache, env){
 	return {
-		post: function(formData, onSuccess, onError){
+		post: function(data, onSuccess, onError){
 
-			var jdata='mydata='+JSON.stringify(formData);
+			var jdata = 'user=' + JSON.stringify(data);
 
 			$http({
 				method: 'POST',
