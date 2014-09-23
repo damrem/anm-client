@@ -2,7 +2,9 @@
 
 angular.module('app')
 
-.controller('addUserController', ['$scope', '$http', '$templateCache', 'env', function($scope, $http, $templateCache, env) {
+.controller('addUserController', 
+	['$scope', 'addUser', 
+	function($scope, addUser) {
 
 	console.log('addUserController added to app!');
 	// function to submit the form after all validation has occurred			
@@ -15,36 +17,32 @@ angular.module('app')
 			return;
 		}
 
+		//console.log(this);	//'this' is the form, ie the html element on which the controller is put
+
 		var formData={
 			'username':this.username,
 			'password':this.password,
 			'email':this.email
 		};
+		
 		this.username='';
 		this.password='';
 		this.email='';
-
-		var jdata='mydata='+JSON.stringify(formData);
-
-		$http({
-			method: 'POST',
-			url: env.SERVER_URL+'/insertuser',
-			data: jdata,
-			headers: {
-				'Content-Type':'application/x-www-form-urlencoded'
-			},
-			cache: $templateCache
-		}).
-		success(function(response){
+		
+		function onSuccess(response){
 			console.log('Success.');
 			$scope.codeStatus=response;
 			console.log($scope.codeStatus);
-		}).
-		error(function(response){
+		}
+
+		function onError(response){
 			console.log('Error.');
 			$scope.codeStatus=response;
 			console.log($scope.codeStatus);
-		});
+		}
+
+		addUser.post(formData, onSuccess, onError);
+
 		//$scope.list();
 		return false;
 	};
