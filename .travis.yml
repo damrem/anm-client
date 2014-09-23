@@ -12,10 +12,17 @@ script:
   - "grunt build"
 
 deploy:
-  branch: master
-  provider: divshot
-  environment:
-    master: development
-  api_key:
-    secure: H/AiT/iDX8BEmxpNR0h37Wkad7KQkf0eezFarwkdgBCnKORcUR2fyd6PrX4bP4DdVkKqm941VyZ2qyKVd73MYxwpdaUf0ZzLR+3O9tIdm9yxyeeHZEWiOpZrgEH4cu+ebnW2/6+gulUUQkn743+cqIuKnqcGAYTLXBfj9EsPxJY=
-  skip_cleanup: true
+  - provider: divshot
+    branch: master
+    environment:
+      master: staging
+    api_key:
+      secure: H/AiT/iDX8BEmxpNR0h37Wkad7KQkf0eezFarwkdgBCnKORcUR2fyd6PrX4bP4DdVkKqm941VyZ2qyKVd73MYxwpdaUf0ZzLR+3O9tIdm9yxyeeHZEWiOpZrgEH4cu+ebnW2/6+gulUUQkn743+cqIuKnqcGAYTLXBfj9EsPxJY=
+    skip_cleanup: true
+  - provider: divshot
+    environment: development
+    api_key:
+      secure: H/AiT/iDX8BEmxpNR0h37Wkad7KQkf0eezFarwkdgBCnKORcUR2fyd6PrX4bP4DdVkKqm941VyZ2qyKVd73MYxwpdaUf0ZzLR+3O9tIdm9yxyeeHZEWiOpZrgEH4cu+ebnW2/6+gulUUQkn743+cqIuKnqcGAYTLXBfj9EsPxJY=
+    on:
+      all_branches: true
+    skip_cleanup: true
