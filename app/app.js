@@ -17,20 +17,23 @@ app
 	delete $httpProvider.defaults.headers.common['X-Requested-Width'];
 }])
 
-/*
+
 .config(function ($routeProvider) {
         $routeProvider
             .when('/', {
-                templateUrl: 'views/main.html'
+                templateUrl: 'components/user-list/user-list-view.html'
             })
-            .when('/about', {
-                templateUrl: 'views/about.html'
+            .when('/list', {
+                templateUrl: 'components/user-list/user-list-view.html'
+            })
+            .when('/add', { 
+                templateUrl: 'components/add-user/add-user-view.html'
             })
             .otherwise({
                 redirectTo: '/'
             });
     })
-*/
+
 ;
 
 function UserListCtrl($scope, $http, $templateCache, env){
