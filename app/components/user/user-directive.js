@@ -10,7 +10,7 @@ angular.module('app')
   .directive('anmUser', function () {
   	//console.log('anm-user-directive');
     return {
-      templateUrl: 'views/anm-user.html',
+      templateUrl: 'components/user/user-view.html',
       restrict: 'A',
       scope: {
       	user:'=anmUser'
