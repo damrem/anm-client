@@ -6,11 +6,12 @@ angular.module('app').service('userList',
 
 		console.log('userList service added to app');
 
-		return{
-			get: function(onSuccess, onError){
-				$http.get(env.SERVER_URL+'/getallusers')
-				.success(onSuccess)
-				.error(onError);
+		return {
+			get: function(){
+				return $http.get(env.SERVER_URL+'/getallusers')
+				.then(function(result){
+					return result.data;
+				});
 			}
 		};
 }]);

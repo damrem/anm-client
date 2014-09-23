@@ -12,12 +12,9 @@ angular.module('app')
 		
 		console.log('userListController.list()');
 		
-		userList.get(
-		function(data){
+		userList.get().then(function(data)
+		{
 			$scope.users = data;
-		},
-		function(error){
-			console.log(error);
 		});
 	};
 
