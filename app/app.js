@@ -35,30 +35,3 @@ app
     })
 
 ;
-
-function UserListCtrl($scope, $http, $templateCache, env){
-
-	$scope.codeStatus='';
-
-	$scope.list = function(){
-		
-		console.log('list');
-		
-		console.log('env.SERVER_URL= '+env.SERVER_URL);
-		//TODO the url must be retrieved from env
-		var url = env.SERVER_URL+'/getallusers';
-		console.log('url='+url);
-
-		$http.get(url)
-		.success(function(data){
-			$scope.users=data;
-		})
-		.error(function(response){
-			console.log(response);
-		});
-	};
-
-	$scope.list();
-}
-
-app.controller('UserListCtrl', ['$scope', '$http', '$templateCache', 'env', UserListCtrl]);
