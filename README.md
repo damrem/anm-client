@@ -17,10 +17,9 @@ Each of these environments calls a REST API on their respective [serverside app]
 * [client production env](http://anm-client.divshot.io/) -> [server production env](http://anm-server.herokuapp.com/)
  
 Other tools involved:
-* [yeoman angular](https://github.com/yeoman/generator-angular)
+* [Yeoman Angular](https://github.com/yeoman/generator-angular);  I modified the structure a bit after those [Google recommandations](https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/mobilebasic?pli=1)
 * [Grunt](http://gruntjs.com/)
-* [Karma](https://github.com/karma-runner/karma)/[jasmine](http://jasmine.github.io/)
-* [Heroku Toolbelt](https://toolbelt.heroku.com/)
+* [Karma](https://github.com/karma-runner/karma)/[Jasmine](http://jasmine.github.io/)
 * [Divshot CLI](https://www.npmjs.org/package/divshot-cli)
 * ...
 
