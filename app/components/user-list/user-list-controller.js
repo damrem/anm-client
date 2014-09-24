@@ -6,7 +6,7 @@ angular.module('app')
 	['$scope', 'userList', 
 	function($scope, userList) {
 
-	console.log('userListController added to app');
+	console.log('userListController added; $scope='+$scope+'; userList='+userList);
 	
 	$scope.list = function(){
 		
