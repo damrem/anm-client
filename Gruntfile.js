@@ -330,13 +330,19 @@ module.exports = function (grunt) {
     // Replace Google CDN references
     cdnify: {
       dist: {
-        html: ['<%= yeoman.dist %>/*.html']
+        html: ['<%= yeoman.dist %>/*.html'],
+        options:{
+          base: 'cdn.anm-client.divshot.io'
+        }
       }
     },
 
     // Copies remaining files to places other tasks can use
     copy: {
       dist: {
+        options:{
+          punctuation:''
+        },
         files: [{
           expand: true,
           dot: true,
@@ -412,11 +418,6 @@ module.exports = function (grunt) {
     ]);
   });
 
-  grunt.registerTask('server', 'DEPRECATED TASK. Use the "serve" task instead', function (target) {
-    grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
-    grunt.task.run(['serve:' + target]);
-  });
-
   grunt.registerTask('test', [
     'clean:server',
     'concurrent:test',
@@ -434,12 +435,12 @@ module.exports = function (grunt) {
     'concat',
     'ngAnnotate:dist',
     'copy:dist',
-    //'cdnify',
+    'cdnify',
     'cssmin',
     'uglify',
     'filerev',
-    'usemin'/*,
-    'htmlmin'*/
+    'usemin',
+    //'htmlmin'
   ]);
 
   grunt.registerTask('default', [
