@@ -12,26 +12,6 @@
         <ng-include src="'components/header/header-partial.html'"></ng-include> 
         <div ng-view></div>
         </div>
-		
-        <!--
-		<div class="span10">
-			<div ng-repeat="user in users" anm-user="user"></div>	
-		</div>
-
-        
-
-		<form name="myform" id="myform1" ng-submit="save()">
-			<fieldset>
-				<legend>New User</legend>
-				<div class="control-group">
-					<center><input type="text" placeholder="User..." ng-model="username" size=50 required/></center> 
-					<center><input type="text" placeholder="Password..." ng-model="password" size=50 required/></center>
-					<center><input type="text" placeholder="Email..." ng-model="email" size=50 required/></center>
-				</div>
-			</fieldset>
-			<p><div><center><button type="submit">Save now...</button></center></div></p>
-		</form>
-        -->
 
         <script src="__/env.js"></script>
 		
@@ -66,6 +46,7 @@
     	<!-- build:js({.tmp,app}) scripts/scripts.js -->
 		<script src="app.js"></script>
         <script src="components/env/env-service.js"></script>
+        <script src="components/header/header-controller.js"></script>
         <script src="components/user/user-directive.js"></script>
         <script src="components/add-user/add-user-service.js"></script>
         <script src="components/add-user/add-user-controller.js"></script>
