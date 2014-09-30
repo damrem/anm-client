@@ -2,7 +2,6 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 // bower:scss
 @import "compass";
 @import "bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
-@import url(http://fonts.googleapis.com/css?family=Press+Start+2P);
 
 .browsehappy {
   margin: 0.2em 0;
@@ -43,9 +42,6 @@ a {
 
 /* Custom page header */
 .header {
-  //border-bottom: 1px solid #e5e5e5;
-  //margin-bottom: 20px;
-
   li a {
     color: $blue;
   }
@@ -136,17 +132,11 @@ a {
 
 .relative {
   position: relative;
-  //background-color: red;
-  //border: 1px green solid;
 }
 
 .slide {
   background-color: yellow;
   position: absolute;
-  //float:left;
-  //left: 0;
-  //top: 0;
-  //width: 100%;
   height: 100%;
   opacity: 1.0;
 }
@@ -204,131 +194,15 @@ a {
 
 .custom-container {
 
-  font-family: 'Press Start 2P', cursive;
-  text-transform: uppercase;
-
-  .controller {
-
-      $border-radius: 5px;
-
-      $bar-height: 35px;
-      
-      $title-color: white;
-      $title-bg-color: black;
-  	
-      $level-color: white;
-      $level-bg-color: black;
-      
-      $total-color: white;
-      $total-bg-color: black;
-      
-      $bar-txt-color: black;
-      $bar-bg-color: white;
-      
-      margin-top: 0px;
-      margin-bottom: 30px;
-
-      .content {
-          padding: 8px;
-          background-color: gray;
-  		    //@include border-radius($border-radius);
-      
-          .icon {
-            position: absolute;
-            top: 13px;
-            left: 28px;
-          }
-
-          h2 {
-            text-align: center;
-            margin: 0px;
-            padding: 0px;
-            padding-top: 15px;
-            padding-bottom: 5px;
-            color: $title-color;
-            background: $title-bg-color;
-
-            
-          }
-      
-          .info {
-      			margin: 0px;
-            padding: 0px;
-      		}
-
-          .level-up-enter {
-            @include text-border(4px, $blue);
-          }
-
-          .level-up-leave {
-            
-          }
-          
-          .level {
-            color: $level-color;
-        		@extend .info;
-            text-align: center;
-            font-size: 24px;
-            @include transition(100ms);
-            background-color: $level-bg-color;
-          }
-
-          .total {
-            @extend .info;
-            color: $total-color;
-            background: $total-bg-color;
-            text-align: center;
-            padding-top: 5px;
-            padding-bottom: 10px;
-          }
-
-          .bar {
-
-            $bar-border-radius: 2px;
-
-            width: 100%;
-            height: $bar-height;
-            background-color: $bar-bg-color;
-            float: left;
-
-           .bar-background {
-              //border: solid 1px #dddddd;
-              width: 100%;
-              height: $bar-height;
-              background-color: $bar-bg-color;
-            }
-
-            .bar-fill {
-              background-color: $blue;
-              height: 100%;
-              //border-left: 2px solid $lightblue;
-              border-top: 2px solid $lightblue;
-              //border-right: 2px solid $darkblue;
-              border-bottom: 2px solid $darkblue;
-
-              @include transition(100ms);
-            }
-
-            .bar-text {
-                color: $bar-txt-color;
-                position: relative;
-                top: -25px;
-                text-align: center;
-                padding-right: 5px;
-
-                @include text-border(1px, #fff);
-            }
-          }
-
-          
-      }
-  }
-
   .about{
     margin-bottom:30px; 
   }
 
   .debug {
     background: yellow;
+  }
+
+  .user{
+    //float: left;
   }
 }

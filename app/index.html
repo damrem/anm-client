@@ -1,14 +1,17 @@
+<!doctype html>
 <html lang="en" ng-app="app">
     <head>
-
         <link rel="stylesheet" href="styles/main.css">
-        
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width">
     </head>
 	<body>
     <!--<body>-->
 		<!--Search: <input ng-model="user"/>-->
+        <div class="container custom-container">
         <ng-include src="'components/header/header-partial.html'"></ng-include> 
         <div ng-view></div>
+        </div>
 		
         <!--
 		<div class="span10">
