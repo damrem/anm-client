@@ -29,6 +29,9 @@ app
             .when('/add', { 
                 templateUrl: 'components/add-user/add-user-view.html'
             })
+            .when('/about', { 
+                templateUrl: 'components/about/about-view.html'
+            })
             .otherwise({
                 redirectTo: '/'
             });

@@ -1,0 +1,31 @@
+<div>
+
+<p><img src="https://travis-ci.org/damrem/anm-client.svg" alt="TRAVIS BUILD"></p>
+<p>This is the client side of a personal experiment using <a href="https://angularjs.org/">AngularJS</a>, <a href="http://nodejs.org/">Node.js</a> &amp; <a href="http://www.mongodb.org/">MongoDB</a>. It has no functional interest.</p>
+<p>It is a single page-webapp developed with <a href="https://angularjs.org/">AngularJS</a> so I could discover the ecosystem, tools &amp; best-practices around this tech:</p>
+<ul>
+<li>encapsulate features into components, themselves being cut into views, controllers, directives, filters</li>
+<li>unit test and automate as much as possible</li>
+</ul>
+<p><a href="https://travis-ci.org/damrem/anm-client">Travis CI</a> installs, builds and tests the project on each <a href="https://github.com/damrem/anm-client">Github</a> push, then deploys it on <a href="https://divshot.com/">Divshot</a> depending on the branch:</p>
+<ul>
+<li>any branch goes to <a href="http://development.anm-client.divshot.io/">developement</a></li>
+<li><code>master</code> goes to <a href="http://staging.anm-client.divshot.io/">staging</a></li>
+<li>nothing goes automatically to <a href="http://anm-client.divshot.io/">production</a>: I willingly want to keep this step manual.</li>
+</ul>
+<p>Each of these environments calls a REST API on their respective <a href="https://github.com/damrem/anm-server">serverside app</a> deployment:</p>
+<ul>
+<li><a href="http://development.anm-client.divshot.io/">client development env</a> -&gt; <a href="http://anm-server-dev.herokuapp.com/">server development env</a></li>
+<li><a href="http://staging.anm-client.divshot.io/">client staging env</a> -&gt; <a href="http://anm-server-stg.herokuapp.com/">server staging env</a></li>
+<li><a href="http://anm-client.divshot.io/">client production env</a> -&gt; <a href="http://anm-server.herokuapp.com/">server production env</a></li>
+</ul>
+<p>Other tools involved:</p>
+<ul>
+<li><a href="https://github.com/yeoman/generator-angular">Yeoman Angular</a>;  I modified the structure a bit after those <a href="https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/mobilebasic?pli=1">Google recommandations</a></li>
+<li><a href="http://gruntjs.com/">Grunt</a></li>
+<li><a href="https://github.com/karma-runner/karma">Karma</a>/<a href="http://jasmine.github.io/">Jasmine</a></li>
+<li><a href="https://www.npmjs.org/package/divshot-cli">Divshot CLI</a></li>
+<li>...</li>
+</ul>
+
+</div>
