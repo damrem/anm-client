@@ -118,7 +118,7 @@ module.exports = function (grunt) {
     // Make sure code styles are up to par and there are no obvious mistakes
     jshint: {
       options: {
-        jshintrc: '.jshintrc',
+        jshintrc: 'conf/.jshintrc',
         reporter: require('jshint-stylish')
       },
       all: {
@@ -129,7 +129,7 @@ module.exports = function (grunt) {
       },
       test: {
         options: {
-          jshintrc: 'test/.jshintrc'
+          jshintrc: 'conf/.jshintrc'
         },
         src: '<%= yeoman.app %>/**/{,*/}*_test.js'
       }
