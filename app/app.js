@@ -7,7 +7,8 @@ var app = angular.module('app', [
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'angular-gestures'
+    'angular-gestures',
+    'nvd3ChartDirectives'
 	]);
 
 

@@ -8,9 +8,9 @@ angular.module('app')
 
 	console.log('d3sampleController added; $scope='+$scope+'; fakeService='+fakeService);
 
-	console.log("fakeService.get="+fakeService.get);
+	//console.log("fakeService.get="+fakeService.get);
 	console.log("fakeService.get()="+fakeService.get());
-	console.log("fakeService.get().then="+fakeService.get().then);
+	//console.log("fakeService.get().then="+fakeService.get().then);
 	console.log("fakeService.get().then()="+fakeService.get().then());
 	
 	$scope.list = function(){
@@ -19,8 +19,8 @@ angular.module('app')
 		
 		fakeService.get().then(function(data)
 		{
-			$scope.users = data;
 			console.log(data);
+			$scope.sampleData = data;
 		});
 	};
 
