@@ -9,7 +9,7 @@ angular.module('app')
 		var defaultEltName = 'd3sample';
 
 		$rootScope.$on('$routeChangeSuccess', function(event, current){
-			console.log('$routeChangeSuccess', current.originalPath);
+			console.log('$routeChangeSuccess', '"'+current.originalPath+'"');
 			
 			var eltToActivateName = current.originalPath.substring(1);
 
@@ -17,7 +17,7 @@ angular.module('app')
 
 			for(var i in eltNames){
 				var eltName = eltNames[i];
-				console.log("eltName="+eltName);
+				//console.log("eltName="+eltName);
 				angular.element('#'+eltName).removeClass('active');
 			}
 			/*
