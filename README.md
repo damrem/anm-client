@@ -1,3 +1,6 @@
+npm prepublish (must have admin access)
+npm start
+
 ![travis build](https://travis-ci.org/damrem/anm-client.svg)
 
 This is the client side of a personal experiment using [AngularJS](https://angularjs.org/), [Node.js](http://nodejs.org/) & [MongoDB](http://www.mongodb.org/). It has no functional interest.
