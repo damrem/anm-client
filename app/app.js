@@ -21,7 +21,7 @@ app
 .config(function ($routeProvider) {
         $routeProvider
             .when('/', {
-                templateUrl: 'components/user-list/user-list-view.html'
+                templateUrl: 'components/d3sample/d3sample-view.html'
             })
             .when('/list', {
                 templateUrl: 'components/user-list/user-list-view.html'
@@ -31,6 +31,9 @@ app
             })
             .when('/about', { 
                 templateUrl: 'components/about/about-view.html'
+            })
+            .when('/d3sample', {
+                templateUrl: 'components/d3sample/d3sample-view.html'
             })
             .otherwise({
                 redirectTo: '/'
