@@ -8,10 +8,10 @@ angular.module('app')
 
 	console.log('d3sampleController added; $scope='+$scope+'; fakeService='+fakeService);
 
-	//console.log("fakeService.get="+fakeService.get);
-	console.log("fakeService.get()="+fakeService.get());
-	//console.log("fakeService.get().then="+fakeService.get().then);
-	console.log("fakeService.get().then()="+fakeService.get().then());
+	//console.log('fakeService.get='+fakeService.get);
+	console.log('fakeService.get()='+fakeService.get());
+	//console.log('fakeService.get().then='+fakeService.get().then);
+	console.log('fakeService.get().then()='+fakeService.get().then());
 	
 	$scope.list = function(){
 		
