@@ -36,6 +36,9 @@ app
             .when('/d3sample', {
                 templateUrl: 'components/d3sample/d3sample-view.html'
             })
+            .when('/d3', {
+                templateUrl: 'components/d3sample/d3sample-view.html'
+            })
             .otherwise({
                 redirectTo: '/'
             });
