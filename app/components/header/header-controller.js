@@ -3,7 +3,7 @@
 
 var routeDefs = [
 	{id: "svg", templateUrl: "pages/svg-sample/svg-sample.html"},
-	{id: "d3", templateUrl: "components/d3sample/d3sample-view.html"}
+	{id: "d3", templateUrl: "pages/d3-sample/d3-sample.html"}
 ];
 
 
@@ -74,31 +74,5 @@ angular.module('app')
 	} 
 	$routeProvider.otherwise({redirectTo:'/'});
 
-/*
-    $routeProvider
-        .when('/', {
-            templateUrl: 'components/d3sample/d3sample-view.html'
-        })
-        .when('/list', {
-            templateUrl: 'components/user-list/user-list-view.html'
-        })
-        .when('/add', { 
-            templateUrl: 'components/add-user/add-user-view.html'
-        })
-        .when('/about', { 
-            templateUrl: 'components/about/about-view.html'
-        })
-        .when('/d3sample', {
-            templateUrl: 'components/d3sample/d3sample-view.html'
-        })
-        .when('/d3', {
-            templateUrl: 'components/d3sample/d3sample-view.html'
-        })
-         .when('/svg', {
-            templateUrl: 'pages/svg-sample/svg-sample.html'
-        })
-        .otherwise({
-            redirectTo: '/'
-        });
-*/
+
     });
