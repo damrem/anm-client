@@ -10,7 +10,8 @@
     <!--<body>-->
 		<!--Search: <input ng-model="user"/>-->
         <div class="container custom-container">
-            <ng-include src="'components/header/header-partial.html'"></ng-include> 
+            <pg-header></pg-header>
+            <!--<ng-include src="'components/header/header-partial.html'"></ng-include> -->
             <div ng-view></div>
         </div>
 
@@ -50,7 +51,7 @@
     	<!-- build:js({.tmp,app}) scripts/scripts.js -->
 		<script src="app.js"></script>
         <script src="components/env/env-service.js"></script>
-        <script src="components/header/header-controller.js"></script>
+        <script src="components/header/header-directive.js"></script>
         <script src="components/d3-sample/d3-sample-controller.js"></script>
         <script src="components/d3-sample/d3-sample-service.js"></script>
 		<!-- endbuild -->

@@ -10,6 +10,7 @@ var routeDefs = [
 angular.module('app')
 
 //	the 'active' link in the header
+/*
 .controller('HeaderController', ['$scope', '$rootScope', '$location',
 	function ($scope, $rootScope, $location) {
 		
@@ -34,10 +35,11 @@ angular.module('app')
 		});
 
 	}])
-
+*/
 //	the routes
 .config(function ($routeProvider) {
 
+	console.log('Setting routes.')
 	for(var i in routeDefs){
 
 		var routeDef = routeDefs[i];
@@ -51,4 +53,46 @@ angular.module('app')
 	} 
 	$routeProvider.otherwise({redirectTo:'/'});
 
-});
+})
+
+.directive('pgHeader', ['$rootScope', '$location',
+	function ($rootScope, $location) {
+  	console.log('pg-header directive created.');
+
+  	return {
+      templateUrl: 'components/header/header-partial.html',
+      restrict: 'E',
+      link: function(scope, element, attrs){
+      	console.log('pg-header directive linked.');
+
+      	$rootScope.$on('$routeChangeStart', function(next, current){
+      		console.log('$routeChangeStart', next, current);
+      	});
+
+      	$rootScope.$on('$routeChangeError', function(next, current){
+      		console.log('$routeChangeError', next, current);
+      	});
+
+      	$rootScope.$on('$routeChangeSuccess', function(event, current){
+			
+			console.log('$routeChangeSuccess');
+			console.log(current);
+			console.log('path='+$location.path());
+			
+			
+			var eltToActivateName = $location.path() === '/' ? routeDefs[0].id : $location.path().substring(1);
+			console.log('eltToActivateName='+eltToActivateName);
+
+			for(var i in routeDefs){
+				console.log(i);
+				angular.element('#'+routeDefs[i].id).removeClass('active');
+			}
+
+			angular.element('#' + eltToActivateName).addClass('active');
+		});
+      }
+    };
+  }])
+
+
+;
