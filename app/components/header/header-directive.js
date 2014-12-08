@@ -1,45 +1,26 @@
 'use strict';
 
 
-var routeDefs = [
-	{id: 'svg', templateUrl: 'pages/svg-sample/svg-sample.html'},
-	{id: 'd3', templateUrl: 'pages/d3-sample/d3-sample.html'}
-];
-
-
 angular.module('app')
 
-//	the 'active' link in the header
-/*
-.controller('HeaderController', ['$scope', '$rootScope', '$location',
-	function ($scope, $rootScope, $location) {
-		
-		console.log('HeaderController');
 
-		$rootScope.$on('$routeChangeSuccess', function(event, current){
-			
-			console.log('$routeChangeSuccess');
-			console.log(current);
-			console.log('path='+$location.path());
-			
-			
-			var eltToActivateName = $location.path() === '/' ? routeDefs[0].id : $location.path().substring(1);
-			console.log('eltToActivateName='+eltToActivateName);
 
-			for(var i in routeDefs){
-				
-				angular.element('#'+routeDefs[i].id).removeClass('active');
-			}
 
-			angular.element('#' + eltToActivateName).addClass('active');
-		});
+.constant('routeDefs', [
+	{id: 'ui', title: 'UI Guideline', templateUrl: 'pages/ui-guideline/index.html'},
+	{id: 'svg', title: 'SVG Sample', templateUrl: 'pages/svg-sample/svg-sample.html'},
+	{id: 'd3', title: 'D3 Sample', templateUrl: 'pages/d3-sample/d3-sample.html'}
+	 
+])
 
-	}])
-*/
+
+
+
 //	the routes
-.config(function ($routeProvider) {
+.config(function ($routeProvider, routeDefs) {
 
-	console.log('Setting routes.')
+	console.log('Setting routes.');
+
 	for(var i in routeDefs){
 
 		var routeDef = routeDefs[i];
@@ -48,51 +29,49 @@ angular.module('app')
 			$routeProvider.when('/', {templateUrl: routeDef.templateUrl});
 		}
 		$routeProvider.when('/'+routeDef.id, {templateUrl: routeDef.templateUrl});
-		
 
 	} 
 	$routeProvider.otherwise({redirectTo:'/'});
 
 })
 
-.directive('pgHeader', ['$rootScope', '$location',
-	function ($rootScope, $location) {
+
+
+
+.directive('pgHeader', ['$rootScope', '$location', 'routeDefs',
+	function ($rootScope, $location, routeDefs) {
   	console.log('pg-header directive created.');
 
+  	console.log('$rootScope='+$rootScope);
+
   	return {
-      templateUrl: 'components/header/header-partial.html',
-      restrict: 'E',
-      link: function(scope, element, attrs){
-      	console.log('pg-header directive linked.');
+		
+		templateUrl: 'components/header/header-partial.html',
+		
+		restrict: 'E',
 
-      	$rootScope.$on('$routeChangeStart', function(next, current){
-      		console.log('$routeChangeStart', next, current);
-      	});
+		controller: function($scope, routeDefs)
+		{
+			console.log('HeaderController created.')
+			$scope.routeDefs = routeDefs;
+		},
 
-      	$rootScope.$on('$routeChangeError', function(next, current){
-      		console.log('$routeChangeError', next, current);
-      	});
+     	link: function(scope, element, attrs){
+	      	console.log('pg-header directive linked.');
 
-      	$rootScope.$on('$routeChangeSuccess', function(event, current){
+	      	$rootScope.$on('$routeChangeSuccess', function(event, current){
 			
-			console.log('$routeChangeSuccess');
-			console.log(current);
-			console.log('path='+$location.path());
-			
-			
-			var eltToActivateName = $location.path() === '/' ? routeDefs[0].id : $location.path().substring(1);
-			console.log('eltToActivateName='+eltToActivateName);
+				var eltToActivateName = $location.path() === '/' ? routeDefs[0].id : $location.path().substring(1);
+				console.log('eltToActivateName='+eltToActivateName);
 
-			for(var i in routeDefs){
-				console.log(i);
-				angular.element('#'+routeDefs[i].id).removeClass('active');
-			}
+				for(var i in routeDefs){
+					angular.element('#'+routeDefs[i].id).removeClass('active');
+				}
 
-			angular.element('#' + eltToActivateName).addClass('active');
-		});
-      }
+				angular.element('#' + eltToActivateName).addClass('active');
+			});
+      	}
     };
-  }])
-
+  	}])
 
 ;
