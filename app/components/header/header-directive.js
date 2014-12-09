@@ -50,7 +50,7 @@ angular.module('app')
 		
 		restrict: 'E',
 
-		link: function(scope, element, attrs){
+		link: function(scope/*, element, attrs*/){
 	      	console.log('pg-header directive linked.');
 
 	      	console.log('ROUTE_DEFS='+ROUTE_DEFS);
@@ -58,7 +58,7 @@ angular.module('app')
 			scope.routeDefs = ROUTE_DEFS;
 
 
-	      	$rootScope.$on('$routeChangeSuccess', function(event, current){
+	      	$rootScope.$on('$routeChangeSuccess', function(/*event, current*/){
 			
 				var eltToActivateName = $location.path() === '/' ? ROUTE_DEFS[0].id : $location.path().substring(1);
 				console.log('eltToActivateName='+eltToActivateName);
