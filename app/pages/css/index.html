@@ -1,0 +1,60 @@
+<h1>CSS Samples</h1>
+
+
+<h2>CSS "display:table" property</h2>
+
+<style>
+
+#header{
+	background:yellow;
+}
+
+#container{
+	display: table;
+	background:gray;
+	margin:auto;
+}
+
+#sidebar{
+	display:table-cell;
+	background:red;
+	width:240px;
+}
+
+#content{
+	display:table-cell;
+	background:green;
+	width:720px;
+}
+
+#footer{
+	background:blue;
+}
+
+</style>
+
+
+<div id="header">
+	Header
+</div>
+
+<div id="container">
+
+	<div id="sidebar">
+		
+		<ul>
+			<li>item1</li>
+			<li>item2</li>
+			<li>item3</li>
+		</ul>
+		
+	</div>
+
+	<div id="content">
+		Some content.
+	</div>
+</div>
+
+<div id="footer">
+	Footer
+</div>

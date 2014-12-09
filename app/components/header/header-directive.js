@@ -8,9 +8,9 @@ angular.module('app')
 
 .constant('routeDefs', [
 	{id: 'ui', title: 'UI Guideline', templateUrl: 'pages/ui-guideline/index.html'},
-	{id: 'svg', title: 'SVG Sample', templateUrl: 'pages/svg-sample/svg-sample.html'},
-	{id: 'd3', title: 'D3 Sample', templateUrl: 'pages/d3-sample/d3-sample.html'}
-	 
+	{id: 'svg', title: 'SVG', templateUrl: 'pages/svg-sample/svg-sample.html'},
+	{id: 'd3', title: 'D3', templateUrl: 'pages/d3-sample/d3-sample.html'},
+	{id: 'misc', title: 'CSS', templateUrl: 'pages/css/index.html'}
 ])
 
 
