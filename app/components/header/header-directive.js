@@ -7,10 +7,12 @@ angular.module('app')
 
 
 .constant('ROUTE_DEFS', [
+	{id: 'ng-repeat-link', title: 'ng-repeat-link', templateUrl: 'components/ng-repeat-link/index.html'},
+	{id: 'js-logger', title: 'js-logger', templateUrl: 'pages/js-logger/index.html'},
 	{id: 'ui', title: 'UI Guideline', templateUrl: 'pages/ui-guideline/index.html'},
+	{id: 'misc', title: 'CSS', templateUrl: 'pages/css/index.html'},
 	{id: 'svg', title: 'SVG', templateUrl: 'pages/svg-sample/svg-sample.html'},
 	{id: 'd3', title: 'D3', templateUrl: 'pages/d3-sample/d3-sample.html'},
-	{id: 'misc', title: 'CSS', templateUrl: 'pages/css/index.html'}
 ])
 
 

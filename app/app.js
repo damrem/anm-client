@@ -8,7 +8,9 @@ var app = angular.module('app', [
     'ngSanitize',
     'ngTouch',
     'angular-gestures',
-    'nvd3ChartDirectives'
+    'nvd3ChartDirectives',
+    'ng-logger',
+    'ng-repeat-link'
 	]);
 
 

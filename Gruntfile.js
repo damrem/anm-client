@@ -172,7 +172,7 @@ module.exports = function (grunt) {
       },
       app: {
         src: ['<%= yeoman.app %>/index.html'],
-        ignorePath:  /..\//
+        //ignorePath:  /..\//
       },
       sass: {
         src: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
